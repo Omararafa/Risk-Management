@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command Risk-Management</Text>
+    <Description>Some description for Risk-Management</Description>
+    <Assembly>Risk-Management.dll</Assembly>
+    <FullClassName>Risk_Management.Command</FullClassName>
+    <ClientId>a8aa6021-fea9-40b1-95f1-6f78ef9f6d35</ClientId>
+    <VendorId>com.typepad.thebuildingcoder</VendorId>
+    <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application Risk-Management</Name>
+    <Assembly>Risk-Management.dll</Assembly>
+    <FullClassName>Risk_Management.App</FullClassName>
+    <ClientId>86a0533f-403c-4d7c-91f3-bd72689b9623</ClientId>
+    <VendorId>com.typepad.thebuildingcoder</VendorId>
+    <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>
