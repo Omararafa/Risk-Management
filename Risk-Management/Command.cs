@@ -23,7 +23,7 @@ namespace Risk_Management
             UIDocument uidoc = uiapp.ActiveUIDocument;
             Application app = uiapp.Application;
             Document doc = uidoc.Document;
-
+            var x = 0;
             // Access current selection
 
             Selection sel = uidoc.Selection;
