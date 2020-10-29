@@ -5,24 +5,28 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Risk_Management"
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="800">
+             d:DesignHeight="800" Width="589">
     <Grid>
         <Border >
             <StackPanel>
-                <Grid>
+                <Grid Height="150">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="67*"/>
-                        <ColumnDefinition Width="229*"/>
+                        <ColumnDefinition Width="185*"/>
+                        <ColumnDefinition Width="211*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" Margin="15 15 0 10" FontWeight="Bold" FontSize="13">Number of groups:</TextBlock>
-                    <TextBlock x:Name="NumberOfGroups" Grid.Column="1" Margin="5,15,0,10" FontWeight="Bold" FontSize="13">12</TextBlock>
+                    <TextBlock x:Name="NumberOfGroups" Grid.Column="1" Margin="199,10,10,10" FontWeight="Bold" FontSize="13"><InlineUIContainer>
+                            <Image x:Name="_01_jpg" Height="129" Source="01.jpg" Stretch="Fill" Width="94" RenderTransformOrigin="1.215,0.5"/> </InlineUIContainer></TextBlock>
+                    <TextBlock Grid.Column="0" Margin="15,15,151,80" FontWeight="Bold" FontSize="13" Grid.ColumnSpan="2"><Run Text="Cairo University"/><LineBreak/><Run Text="Faculty Of Engineering"/><LineBreak/><Run Text="Engineering And Construction Management Department"/><LineBreak/><Run/></TextBlock>
+                    <Line Stretch="Fill" Stroke="Black" X2="1" Grid.ColumnSpan="2" Margin="15,70,136,70"/>
+                    <TextBlock TextAlignment="Center" TextDecorations="Underline" Foreground="Gray"  Grid.Column="0" Margin="15,85,151,10" FontWeight="Bold" FontSize="13" Grid.ColumnSpan="2"><Run Text="&quot;QUESTIONNAIRE SURVEY-MITIGATING RISKS DUE TO BIM"/><LineBreak/><Run Text="CONSTRUCTION IMPLEMENTATION IN EGYPT&quot;"/><LineBreak/><Run/></TextBlock>
+
                 </Grid>
-                <DataGrid Height="380" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                <DataGrid Height="235" ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto"
                           Margin="0 0 0 0" Name="Grid1" CanUserAddRows="False"
                           ColumnWidth="187"  CanUserReorderColumns="True"
-                          CanUserResizeColumns="True" AlternatingRowBackground="#eee"
-                          ></DataGrid>
+                          CanUserResizeColumns="True" AlternatingRowBackground="#eee" SelectionChanged="Grid1_SelectionChanged"
+                />
                 <Border Background="#eee" BorderBrush="Gray" BorderThickness="0 1 0 0">
                     <Grid >
                         <Grid.ColumnDefinitions>

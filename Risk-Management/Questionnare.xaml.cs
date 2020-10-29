@@ -24,5 +24,10 @@ namespace Risk_Management
         {
             InitializeComponent();
         }
+
+        private void Grid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

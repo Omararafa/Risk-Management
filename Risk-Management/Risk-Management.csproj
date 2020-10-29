@@ -63,6 +63,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="01.jpg" />
     <Content Include="Risk-Management.addin" />
   </ItemGroup>
   <ItemGroup>
