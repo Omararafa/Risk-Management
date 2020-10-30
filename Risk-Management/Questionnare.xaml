@@ -31,7 +31,7 @@
                           CanUserResizeColumns="True" AlternatingRowBackground="#eee" SelectionChanged="Grid1_SelectionChanged"
                           
                           />
-                <FlowDocumentReader UseLayoutRounding="True" SnapsToDevicePixels="True" Height="635">
+                <FlowDocumentReader UseLayoutRounding="True" SnapsToDevicePixels="True" Height="607">
                     <FlowDocumentReader.Resources>
                         <Style TargetType="{x:Type TableCell}">
                             <Setter Property="TextAlignment" Value="Center" />
@@ -96,6 +96,434 @@
                                         </Paragraph>
                                     </TableCell>
                                 </TableRow>
+                                <TableRow>
+                                    <TableCell  BorderBrush="Black" BorderThickness="1">
+                                        <Paragraph Margin="0,10,0,0" FontWeight="Light">
+                                            <Run Text="2"/>
+                                        </Paragraph>
+                                    </TableCell>
+
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="5,5" TextAlignment="Left" FontWeight="Light">
+                                            <Run Text="Project contract treats the BIM model as a contract document."/>
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="0,16,0,0" FontWeight="Light">
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell  BorderBrush="Black" BorderThickness="1">
+                                        <Paragraph Margin="0,10,0,0" FontWeight="Light">
+                                            <Run Text="3"/>
+                                        </Paragraph>
+                                    </TableCell>
+
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="5,5" TextAlignment="Left" FontWeight="Light">
+                                            <Run Text="Two-dimensional (2D) drawings have the priority in interpretation in case of discrepancy with BIM Model."/>
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="0,16,0,0" FontWeight="Light">
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell  BorderBrush="Black" BorderThickness="1">
+                                        <Paragraph Margin="0,10,0,0" FontWeight="Light">
+                                            <Run Text="4"/>
+                                        </Paragraph>
+                                    </TableCell>
+
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="5,5" TextAlignment="Left" FontWeight="Light">
+                                            <Run Text="A Laser Scanner is applied in the project to monitor the progress and managed by clear provisions of standard"/>
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="0,16,0,0" FontWeight="Light">
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell  BorderBrush="Black" BorderThickness="1">
+                                        <Paragraph Margin="0,10,0,0" FontWeight="Light">
+                                            <Run Text="5"/>
+                                        </Paragraph>
+                                    </TableCell>
+
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="5,5" TextAlignment="Left" FontWeight="Light">
+                                            <Run Text="BIM guidance standard is applied or followed throughout BIM model development."/>
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="0,16,0,0" FontWeight="Light">
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell  BorderBrush="Black" BorderThickness="1">
+                                        <Paragraph Margin="0,10,0,0" FontWeight="Light">
+                                            <Run Text="6"/>
+                                        </Paragraph>
+                                    </TableCell>
+
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="5,5" TextAlignment="Left" FontWeight="Light">
+                                            <Run Text="BIM manager role is engaged acting as a neutral party in the project, and the obligation to have BIM staff on-site /co-location of BIM staff."/>
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="0,16,0,0" FontWeight="Light">
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell  BorderBrush="Black" BorderThickness="1">
+                                        <Paragraph Margin="0,10,0,0" FontWeight="Light">
+                                            <Run Text="7"/>
+                                        </Paragraph>
+                                    </TableCell>
+
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="5,5" TextAlignment="Left" FontWeight="Light">
+                                            <Run Text="Additional insurance coverages is provided to ensure all risks and liabilities involved in BIM models, software, and hardware."/>
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="0,16,0,0" FontWeight="Light">
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell  BorderBrush="Black" BorderThickness="1">
+                                        <Paragraph Margin="0,10,0,0" FontWeight="Light">
+                                            <Run Text="8"/>
+                                        </Paragraph>
+                                    </TableCell>
+
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="5,5" TextAlignment="Left" FontWeight="Light">
+                                            <Run Text="Indemnity is obligated to protect the client's interest for any errors or technical issues form tools or software in the project."/>
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="0,16,0,0" FontWeight="Light">
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell  BorderBrush="Black" BorderThickness="1">
+                                        <Paragraph Margin="0,10,0,0" FontWeight="Light">
+                                            <Run Text="9"/>
+                                        </Paragraph>
+                                    </TableCell>
+
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="5,5" TextAlignment="Left" FontWeight="Light">
+                                            <Run Text="Data providers (designers or contractors) are responsible and liable for the inserted data in the model."/>
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="0,16,0,0" FontWeight="Light">
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell  BorderBrush="Black" BorderThickness="1">
+                                        <Paragraph Margin="0,10,0,0" FontWeight="Light">
+                                            <Run Text="10"/>
+                                        </Paragraph>
+                                    </TableCell>
+
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="5,5" TextAlignment="Left" FontWeight="Light">
+                                            <Run Text="Loss due to the negligence of the design team and data misuse is recovered by the injured party or third party; the design team is not responsible for it."/>
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="0,16,0,0" FontWeight="Light">
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell  BorderBrush="Black" BorderThickness="1">
+                                        <Paragraph Margin="0,10,0,0" FontWeight="Light">
+                                            <Run Text="11"/>
+                                        </Paragraph>
+                                    </TableCell>
+
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="5,5" TextAlignment="Left" FontWeight="Light">
+                                            <Run Text="In line with the previous point; Designers is responsible for the negligence toward the third party regardless of privity of contract."/>
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="0,16,0,0" FontWeight="Light">
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell  BorderBrush="Black" BorderThickness="1">
+                                        <Paragraph Margin="0,5,0,0" FontWeight="Light">
+                                            <Run Text="12"/>
+                                        </Paragraph>
+                                    </TableCell>
+
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="5,5" TextAlignment="Left" FontWeight="Light">
+                                            <Run Text="Designer is the ownership of the model."/>
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="0,8,0,0" FontWeight="Light">
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell  BorderBrush="Black" BorderThickness="1">
+                                        <Paragraph Margin="0,10,0,0" FontWeight="Light">
+                                            <Run Text="13"/>
+                                        </Paragraph>
+                                    </TableCell>
+
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="5,5" TextAlignment="Left" FontWeight="Light">
+                                            <Run Text="In line with the previous point; If the model is designed and contributed by a team, each party owns all rights to its own contribution."/>
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="0,16,0,0" FontWeight="Light">
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+
+                                    <TableCell FontWeight="Bold" BorderBrush="Black" BorderThickness="1,1,1,1" ColumnSpan="1" Background="LightGray" >
+                                        <Paragraph>
+                                            <Run Text="B"/>
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell FontWeight="Bold" BorderBrush="Black" BorderThickness="0,1,1,1"  ColumnSpan="2" Background="LightGray" >
+                                        <Paragraph>
+                                            <Run Text="Design"/>
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+
+                                <TableRow>
+                                    <TableCell  BorderBrush="Black" BorderThickness="1">
+                                        <Paragraph Margin="0,10,0,0" FontWeight="Light">
+                                            <Run Text="14"/>
+                                        </Paragraph>
+                                    </TableCell>
+
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="5,5" TextAlignment="Left" FontWeight="Light">
+                                            <Run Text="Contractor cannot make a claim from the design errors by the designers including pure economic loss."/>
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="0,16,0,0" FontWeight="Light">
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell  BorderBrush="Black" BorderThickness="1">
+                                        <Paragraph Margin="0,5,0,0" FontWeight="Light">
+                                            <Run Text="15"/>
+                                        </Paragraph>
+                                    </TableCell>
+
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="5,5" TextAlignment="Left" FontWeight="Light">
+                                            <Run Text="Size and complexity of the project is high."/>
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="0,8,0,0" FontWeight="Light">
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell  BorderBrush="Black" BorderThickness="1">
+                                        <Paragraph Margin="0,5,0,0" FontWeight="Light">
+                                            <Run Text="16"/>
+                                        </Paragraph>
+                                    </TableCell>
+
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="5,5" TextAlignment="Left" FontWeight="Light">
+                                            <Run Text="Size and complexity of the project is medium."/>
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="0,8,0,0" FontWeight="Light">
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell  BorderBrush="Black" BorderThickness="1">
+                                        <Paragraph Margin="0,5,0,0" FontWeight="Light">
+                                            <Run Text="17"/>
+                                        </Paragraph>
+                                    </TableCell>
+
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="5,5" TextAlignment="Left" FontWeight="Light">
+                                            <Run Text="Size and complexity of the project is low."/>
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="0,8,0,0" FontWeight="Light">
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell  BorderBrush="Black" BorderThickness="1">
+                                        <Paragraph Margin="0,5,0,0" FontWeight="Light">
+                                            <Run Text="18"/>
+                                        </Paragraph>
+                                    </TableCell>
+
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="5,5" TextAlignment="Left" FontWeight="Light">
+                                            <Run Text="Building system of the project is traditional."/>
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="0,8,0,0" FontWeight="Light">
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell  BorderBrush="Black" BorderThickness="1">
+                                        <Paragraph Margin="0,10,0,0" FontWeight="Light">
+                                            <Run Text="19"/>
+                                        </Paragraph>
+                                    </TableCell>
+
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="5,5" TextAlignment="Left" FontWeight="Light">
+                                            <Run Text="sharing of project information with other project participants may resulting errors."/>
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="0,16,0,0" FontWeight="Light">
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell  BorderBrush="Black" BorderThickness="1">
+                                        <Paragraph Margin="0,5,0,0" FontWeight="Light">
+                                            <Run Text="20"/>
+                                        </Paragraph>
+                                    </TableCell>
+
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="5,5" TextAlignment="Left" FontWeight="Light">
+                                            <Run Text="BIM model includes landscape design."/>
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="0,8,0,0" FontWeight="Light">
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                
+                                <TableRow>
+
+                                    <TableCell FontWeight="Bold" BorderBrush="Black" BorderThickness="1,1,1,1" ColumnSpan="1" Background="LightGray" >
+                                        <Paragraph>
+                                            <Run Text="C"/>
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell FontWeight="Bold" BorderBrush="Black" BorderThickness="0,1,1,1"  ColumnSpan="2" Background="LightGray" >
+                                        <Paragraph>
+                                            <Run Text="Software"/>
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell  BorderBrush="Black" BorderThickness="1">
+                                        <Paragraph Margin="0,10,0,0" FontWeight="Light">
+                                            <Run Text="21"/>
+                                        </Paragraph>
+                                    </TableCell>
+
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="5,5" TextAlignment="Left" FontWeight="Light">
+                                            <Run Text="Certain constraints are defined in order to be implemented to prevent data loss and privacy."/>
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="0,16,0,0" FontWeight="Light">
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+
+                                <TableRow>
+
+                                    <TableCell FontWeight="Bold" BorderBrush="Black" BorderThickness="1,1,1,1" ColumnSpan="1" Background="LightGray" >
+                                        <Paragraph>
+                                            <Run Text="D"/>
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell FontWeight="Bold" BorderBrush="Black" BorderThickness="0,1,1,1"  ColumnSpan="2" Background="LightGray" >
+                                        <Paragraph>
+                                            <Run Text="Financial"/>
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell  BorderBrush="Black" BorderThickness="1">
+                                        <Paragraph Margin="0,10,0,0" FontWeight="Light">
+                                            <Run Text="22"/>
+                                        </Paragraph>
+                                    </TableCell>
+
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="5,5" TextAlignment="Left" FontWeight="Light">
+                                            <Run Text="Cost for model development is clarified including the penalty and rewards involved, if any."/>
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                        <Paragraph Margin="0,16,0,0" FontWeight="Light">
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+
+
+
+
+
+
+
+
 
 
 
@@ -114,10 +542,10 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button  Height="25" Margin="5 12 5 18" Grid.Column="0" Click="Replace" >Replace Groups</Button>
-                        <Button Height="25" Margin="5 12 5 18" Grid.Column="1" Click="Merge" >Merge Groups</Button>
-                        <Button  Height="25" Margin="5 12 5 18" Grid.Column="2" Click="Add" >Add To Current Groups</Button>
-                        <Button Height="25" Margin="5 12 5 18" Grid.Column="3" Click="Button_Click" >Close</Button>
+                        <Button  Height="25" Margin="5 12 5 18" Grid.Column="0" Click="Replace" >Cancel</Button>
+                        <Button Height="25" Margin="5 12 5 18" Grid.Column="1" Click="Merge" > </Button>
+                        <Button  Height="25" Margin="5 12 5 18" Grid.Column="2" Click="Add" > </Button>
+                        <Button Height="25" Margin="5 12 5 18" Grid.Column="3" Click="Button_Click" >Next</Button>
                     </Grid>
                 </Border>
 
@@ -126,3 +554,5 @@
         </Border>
     </Grid>
 </Window>
+
+

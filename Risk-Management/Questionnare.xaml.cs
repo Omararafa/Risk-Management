@@ -29,5 +29,22 @@ namespace Risk_Management
         {
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            #region Open the pop up          
+            Window02 x = new Window02();
+            x.Height = 555;
+            x.Width = 1200;
+            double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+            double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+            double windowWidth = x.Width;
+            double windowHeight = x.Height;
+            x.Left = (screenWidth / 2) - (windowWidth / 2);
+            x.Top = (screenHeight / 2) - (windowHeight / 2);
+            x.ShowDialog();
+
+            #endregion
+        }
     }
 }
