@@ -23,8 +23,20 @@ namespace Risk_Management
             UIDocument uidoc = uiapp.ActiveUIDocument;
             Application app = uiapp.Application;
             Document doc = uidoc.Document;
-            var x = 0;
             // Access current selection
+
+            #region Questionnare window
+            Questionnare x = new Questionnare();
+            x.Height = 1000;
+            x.Width = 600;
+            double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+            double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+            double windowWidth = x.Width;
+            double windowHeight = x.Height;
+            x.Left = (screenWidth / 2) - (windowWidth / 2);
+            x.Top = (screenHeight / 2) - (windowHeight / 2);
+            x.ShowDialog();
+            #endregion
 
             Selection sel = uidoc.Selection;
 

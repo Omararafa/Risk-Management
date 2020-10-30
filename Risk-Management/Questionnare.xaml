@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Risk_Management"
-             mc:Ignorable="d" Width="589" Height="956">
+             mc:Ignorable="d" Width="600" Height="1000">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="430*"/>
@@ -18,27 +18,21 @@
                         <ColumnDefinition Width="211*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock x:Name="NumberOfGroups" Grid.Column="1" Margin="199,10,10,10" FontWeight="Bold" FontSize="13"><InlineUIContainer>
-                            <Image x:Name="_01_jpg" Height="129" Source="01.jpg" Stretch="Fill" Width="94" RenderTransformOrigin="1.215,0.5"/> </InlineUIContainer></TextBlock>
+                            <Image x:Name="_01_jpg" Height="129" Stretch="Fill" Width="94" RenderTransformOrigin="1.215,0.5"/> </InlineUIContainer></TextBlock>
                     <TextBlock Grid.Column="0" Margin="15,15,151,80" FontWeight="Bold" FontSize="13" Grid.ColumnSpan="2"><Run Text="Cairo University"/><LineBreak/><Run Text="Faculty Of Engineering"/><LineBreak/><Run Text="Engineering And Construction Management Department"/><LineBreak/><Run/></TextBlock>
                     <Line Stretch="Fill" Stroke="Black" X2="1" Grid.ColumnSpan="2" Margin="15,70,136,70"/>
                     <TextBlock TextAlignment="Center" TextDecorations="Underline" Foreground="Gray"  Grid.Column="0" Margin="15,85,151,10" FontWeight="Bold" FontSize="13" Grid.ColumnSpan="2"><Run Text="&quot;QUESTIONNAIRE SURVEY-MITIGATING RISKS DUE TO BIM"/><LineBreak/><Run Text="CONSTRUCTION IMPLEMENTATION IN EGYPT&quot;"/><LineBreak/><Run/></TextBlock>
 
                 </Grid>                
-                <DataGrid Height="18" ScrollViewer.VerticalScrollBarVisibility="Auto"
-                          ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                          Margin="0 0 0 0" Name="Grid1" CanUserAddRows="False"
-                          ColumnWidth="187"  CanUserReorderColumns="True"
-                          CanUserResizeColumns="True" AlternatingRowBackground="#eee" SelectionChanged="Grid1_SelectionChanged"
-                          
-                          />
-                <FlowDocumentReader UseLayoutRounding="True" SnapsToDevicePixels="True" Height="607">
+                <FlowDocumentReader UseLayoutRounding="True" SnapsToDevicePixels="True" Height="770" ViewingMode="Scroll"
+                                     Zoom="10"  IsFindEnabled="False" IsPageViewEnabled="False"  IsTwoPageViewEnabled="False">
                     <FlowDocumentReader.Resources>
                         <Style TargetType="{x:Type TableCell}">
                             <Setter Property="TextAlignment" Value="Center" />
                         </Style>
                     </FlowDocumentReader.Resources>
                     <FlowDocument>
-                        <Table CellSpacing="0">
+                        <Table x:Name="Table" CellSpacing="0">
                             <Table.Columns >
                                 <TableColumn  Width="40"/>
                                 <TableColumn />
@@ -78,9 +72,9 @@
                                         </Paragraph>
                                     </TableCell>
                                 </TableRow>
-                                <TableRow>
+                                <TableRow x:Name="One">
                                     <TableCell  BorderBrush="Black" BorderThickness="1">
-                                        <Paragraph Margin="0,10,0,0" FontWeight="Light">
+                                        <Paragraph Margin="5,5" FontWeight="Light">
                                             <Run Text="1"/>
                                         </Paragraph>
                                     </TableCell>
@@ -90,15 +84,15 @@
                                             <Run Text="A BIM Standard form has been used in drafting the project contract."/>
                                         </Paragraph>
                                     </TableCell>
-                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
-                                        <Paragraph Margin="0,16,0,0" FontWeight="Light">
-                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TableCell BorderBrush="Black" BorderThickness="0,1,1,1" TextAlignment="Center" >
+                                        <Paragraph Margin="5,5" FontWeight="Light">
+                                            <CheckBox x:Name="RowOne" IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}"/>
                                         </Paragraph>
                                     </TableCell>
                                 </TableRow>
-                                <TableRow>
+                                <TableRow x:Name="test">
                                     <TableCell  BorderBrush="Black" BorderThickness="1">
-                                        <Paragraph Margin="0,10,0,0" FontWeight="Light">
+                                        <Paragraph Margin="5,5" FontWeight="Light">
                                             <Run Text="2"/>
                                         </Paragraph>
                                     </TableCell>
@@ -109,7 +103,7 @@
                                         </Paragraph>
                                     </TableCell>
                                     <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
-                                        <Paragraph Margin="0,16,0,0" FontWeight="Light">
+                                        <Paragraph Margin="5,5" FontWeight="Light">
                                             <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
                                         </Paragraph>
                                     </TableCell>
@@ -540,12 +534,10 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
+
                         </Grid.ColumnDefinitions>
-                        <Button  Height="25" Margin="5 12 5 18" Grid.Column="0" Click="Replace" >Cancel</Button>
-                        <Button Height="25" Margin="5 12 5 18" Grid.Column="1" Click="Merge" > </Button>
-                        <Button  Height="25" Margin="5 12 5 18" Grid.Column="2" Click="Add" > </Button>
-                        <Button Height="25" Margin="5 12 5 18" Grid.Column="3" Click="Button_Click" >Next</Button>
+                        <Button  Height="25" Margin="5 12 5 18" Grid.Column="1">Cancel</Button>
+                        <Button Height="25" Margin="5 12 5 18" Grid.Column="2" Click="Next" >Next</Button>
                     </Grid>
                 </Border>
 

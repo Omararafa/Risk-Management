@@ -18,7 +18,7 @@ namespace Risk_Management
     /// <summary>
     /// Interaction logic for Window02.xaml
     /// </summary>
-    public partial class Window02 : UserControl
+    public partial class Window02 : Window
     {
         public Window02()
         {
