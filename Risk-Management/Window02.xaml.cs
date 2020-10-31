@@ -23,22 +23,23 @@ namespace Risk_Management
     /// </summary>
     public partial class Window02 : Window
     {
-        public List<string> sePublic;
+        public List<string> SePublic;
         public List<string> TexPublic;
-        public Window02(List<string> serial, List<string> text)
+        public Window02(List<string> SerialList, List<string> TextList)
         {
             InitializeComponent();
             SetPropertires();
 
-            ListBoxItem itm = new ListBoxItem();
-            itm.Content = "some text";
-
-            listBox.Items.Add(itm);
-            foreach (var x in serial)
+            foreach (var x in SerialList)
             {
-                sePublic.Add(x)
+                SePublic.Add(x);
+            }
+            foreach (var y in TextList)
+            {
+                TexPublic.Add(y);
             }
 
+            //Grid1.ItemsSource = ExistingData.Existing(Data);
         }
         void SetPropertires()
         {
