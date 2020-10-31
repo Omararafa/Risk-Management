@@ -66,4 +66,12 @@ namespace Risk_Management
             return Result.Succeeded;
         }
     }
+    public class MyClass
+    {
+        private List<string> RowContent = new List<string>();
+        public List<string> GetList()
+        {
+            return RowContent;
+        }
+    }
 }

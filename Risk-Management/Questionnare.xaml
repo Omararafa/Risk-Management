@@ -72,11 +72,12 @@
                                         </Paragraph>
                                     </TableCell>
                                 </TableRow>
-                                <TableRow x:Name="One">
+                                <TableRow x:Name="TR01">
                                     <TableCell  BorderBrush="Black" BorderThickness="1">
                                         <Paragraph Margin="5,5" FontWeight="Light">
                                             <Run Text="1"/>
                                         </Paragraph>
+                                        
                                     </TableCell>
 
                                     <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
@@ -86,7 +87,7 @@
                                     </TableCell>
                                     <TableCell BorderBrush="Black" BorderThickness="0,1,1,1" TextAlignment="Center" >
                                         <Paragraph Margin="5,5" FontWeight="Light">
-                                            <CheckBox x:Name="RowOne" IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}"/>
+                                            <CheckBox x:Name="CheckBox01" IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}"/>
                                         </Paragraph>
                                     </TableCell>
                                 </TableRow>

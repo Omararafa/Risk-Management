@@ -61,46 +61,80 @@ namespace Risk_Management
 
         private void Next(object sender, RoutedEventArgs e)
         {
-            foreach(var x in Table.RowGroups)
+
+
+            //foreach (var x in Table.RowGroups)
+            //{
+
+            //}
+         
+
+            //Entire Row List
+             List<string> RowContent = new List<string>();
+            //Combine Row
+            //String.Join(String.Empty, RowContent.ToArray());
+
+            string New = string.Join(",", RowContent);
+            //---------------------------
+            TableRow TableRow01 = TR01 as TableRow;
+
+            if(CheckBox01.IsChecked==true)
             {
-
-            }
-
-            List<string> resultsList = new List<string>();
-            TableRow x = One as TableRow;
-            foreach (var tableCell in x.Cells)
+            foreach (var TableRow01Cell in TableRow01.Cells)
             {
                 // May want to start another list here in case there are multiple blocks.
+                //BlockContent List "Paragraph"
                 List<string> blockContent = new List<string>();
-                foreach (var block in tableCell.Blocks.OfType<Paragraph>())
+                //---------------------------
+                foreach (var block in TableRow01Cell.Blocks.OfType<Paragraph>())
                 {
+                    
+
+
                     // Probably want to start another list here to which to add in the next loop.
+                    //InlineContent List "Text"
                     List<string> inlineContent = new List<string>();
-                    foreach (var inline in block.Inlines)
+                    //---------------------------
+
+                    foreach (var inline in block.Inlines.OfType<Run>())
                     {
                         // Implement whatever in here depending the type of inline,
                         // such as Span, Run, InlineUIContainer, etc.
                         // I just assumed it was text.
+
+
                         inlineContent.Add(new TextRange(inline.ContentStart, inline.ContentEnd).Text);
+
+
                     }
+
                     blockContent.Add(string.Join("", inlineContent.ToArray()));
+
+                }
+                if (string.Join("", blockContent.ToArray()) != "")
+                {
+                    RowContent.Add(string.Join("", blockContent.ToArray()));
                 }
             }
-                /*
-                #region Open the pop up          
-                Window02 x = new Window02();
-                x.Height = 555;
-                x.Width = 1200;
-                double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
-                double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
-                double windowWidth = x.Width;
-                double windowHeight = x.Height;
-                x.Left = (screenWidth / 2) - (windowWidth / 2);
-                x.Top = (screenHeight / 2) - (windowHeight / 2);
-                x.ShowDialog();
-                #endregion
-                */
-
             }
+
+
+
+            
+            #region Open the pop up          
+            Window02 x = new Window02();
+            x.Height = 1000;
+            x.Width = 600;
+            double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+            double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+            double windowWidth = x.Width;
+            double windowHeight = x.Height;
+            x.Left = (screenWidth / 2) - (windowWidth / 2);
+            x.Top = (screenHeight / 2) - (windowHeight / 2);
+            x.ShowDialog();
+            #endregion
+            
+
+        }
     }
 }
