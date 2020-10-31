@@ -23,7 +23,9 @@ namespace Risk_Management
     /// </summary>
     public partial class Window02 : Window
     {
-        public Window02()
+        public List<string> sePublic;
+        public List<string> TexPublic;
+        public Window02(List<string> serial, List<string> text)
         {
             InitializeComponent();
             SetPropertires();
@@ -32,6 +34,10 @@ namespace Risk_Management
             itm.Content = "some text";
 
             listBox.Items.Add(itm);
+            foreach (var x in serial)
+            {
+                sePublic.Add(x)
+            }
 
         }
         void SetPropertires()
@@ -59,7 +65,7 @@ namespace Risk_Management
         }
         private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            
         }
 
         private void listBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)

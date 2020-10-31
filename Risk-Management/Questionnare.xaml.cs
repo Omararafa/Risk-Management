@@ -68,7 +68,7 @@ namespace Risk_Management
 
             //}
          
-
+            
             //Entire Row List
              List<string> RowContent = new List<string>();
             //Combine Row
@@ -114,7 +114,9 @@ namespace Risk_Management
                 if (string.Join("", blockContent.ToArray()) != "")
                 {
                     RowContent.Add(string.Join("", blockContent.ToArray()));
+
                 }
+                    
             }
             }
 
@@ -122,7 +124,7 @@ namespace Risk_Management
 
             
             #region Open the pop up          
-            Window02 x = new Window02();
+            Window02 x = new Window02(serial,text);
             x.Height = 1000;
             x.Width = 600;
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
