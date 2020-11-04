@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Linq;
+using Smart_Design_Plug_in_Updates;
 
 namespace Risk_Management
 {
@@ -23,21 +24,18 @@ namespace Risk_Management
     /// </summary>
     public partial class Window02 : Window
     {
-        public List<string> SePublic;
-        public List<string> TexPublic;
+        public List<string> SePublic=new List<string>();
+        public List<string> TexPublic = new List<string>();
         public Window02(List<string> SerialList, List<string> TextList)
         {
             InitializeComponent();
             SetPropertires();
+            var Data = ClustersData.GetData(SerialList, TextList);
+            Grid1.ItemsSource = Data;
+            
 
-            foreach (var x in SerialList)
-            {
-                SePublic.Add(x);
-            }
-            foreach (var y in TextList)
-            {
-                TexPublic.Add(y);
-            }
+
+
 
             //Grid1.ItemsSource = ExistingData.Existing(Data);
         }

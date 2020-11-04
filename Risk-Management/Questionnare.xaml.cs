@@ -72,8 +72,10 @@ namespace Risk_Management
             {
 
                 int count = 0;
+                
                 foreach (var Row in RowGroup.Rows)
                 {
+                    bool? check = false;
                     if (count > 1)
                     {
                         if (RowContent.Count == 2)
@@ -88,6 +90,7 @@ namespace Risk_Management
                         }
                         //if (CheckBox01.IsChecked == true)
                         //{
+                        int CountTwo = 0;
                         foreach (var Cell in Row.Cells)
                         {
                             // May want to start another list here in case there are multiple blocks.
@@ -100,31 +103,71 @@ namespace Risk_Management
                                 //InlineContent List "Text"
                                 List<string> inlineContent = new List<string>();
                                 //---------------------------
-
-                                foreach (var inline in block.Inlines.OfType<Run>())
+                                #region Checkbox
+                                if (block.Inlines.ElementAt<Inline>(CountTwo) is Run)
                                 {
-                                    // Implement whatever in here depending the type of inline,
-                                    // such as Span, Run, InlineUIContainer, etc.
-                                    // I just assumed it was text.
-                                    inlineContent.Add(new TextRange(inline.ContentStart, inline.ContentEnd).Text);
+                                    var Dummy = "run";
                                 }
-                                foreach (var inline in block.Inlines.OfType<CheckBox>())
+                                else
                                 {
-                                    // Implement whatever in here depending the type of inline,
-                                    // such as Span, Run, InlineUIContainer, etc.
-                                    // I just assumed it was text.
-                                    var test = inline.IsChecked;
+                                    var UIList = block.Inlines.OfType<InlineUIContainer>();
+                                    var UI = UIList.First();
+                                    var Case = UI.Child;
+                                    if (Case is CheckBox)
+                                    {
+                                        var checkbox = Case as CheckBox;
+                                        check = checkbox.IsChecked;
+                                    }
+                                    else
+                                    {
+                                        check = false;
+                                    }
+                                    //var Check = testt.IsChecked;
                                 }
-                                blockContent.Add(string.Join("", inlineContent.ToArray()));
+                                #endregion
 
                             }
-                            if (string.Join("", blockContent.ToArray()) != "")
+
+
+                        }
+
+                        if (check == true)
+                        {
+                            foreach (var Cell in Row.Cells)
                             {
-                                RowContent.Add(string.Join("", blockContent.ToArray()));
+                                // May want to start another list here in case there are multiple blocks.
+                                //BlockContent List "Paragraph"
+                                List<string> blockContent = new List<string>();
+                                //---------------------------
+                                foreach (var block in Cell.Blocks.OfType<Paragraph>())
+                                {
+                                    // Probably want to start another list here to which to add in the next loop.
+                                    //InlineContent List "Text"
+                                    List<string> inlineContent = new List<string>();
+                                    //---------------------------
+
+                                    foreach (var inline in block.Inlines.OfType<Run>())
+                                    {
+                                        // Implement whatever in here depending the type of inline,
+                                        // such as Span, Run, InlineUIContainer, etc.
+                                        // I just assumed it was text.
+                                        inlineContent.Add(new TextRange(inline.ContentStart, inline.ContentEnd).Text);
+                                    }
+                                    blockContent.Add(string.Join("", inlineContent.ToArray()));
+
+                                }
+                                if (string.Join("", blockContent.ToArray()) != "")
+                                {
+                                    RowContent.Add(string.Join("", blockContent.ToArray()));
+                                }
+
                             }
                         }
+
                         //}
                     }
+
+ 
                     count = count+1;
                 }
             }
@@ -146,41 +189,6 @@ namespace Risk_Management
 
 
 
-            //Getting Checkboxlist
-            List<object> CheckboxList = new List<object>();
-            foreach (var RowGroup in Table.RowGroups)
-            {
-                foreach (var Row in RowGroup.Rows)
-                {
-                    if (RowContent.Count == 2)
-                    {
-                        SerialList.Add(RowContent[0]);
-                        TextList.Add(RowContent[1]);
-                        RowContent.Clear();
-                    }
-                    else if (RowContent.Count != 2)
-                    {
-                        RowContent.Clear();
-                    }
-                    foreach (var Cell in Row.Cells)
-                    {
-                        
-                        foreach (var block in Cell.Blocks.OfType<Paragraph>())
-                        {
-                            
-                            foreach (object inline in block.Inlines.OfType<InlineUIContainer>())
-                            {
-                                CheckboxList.Add(inline);
-                            }
-                            
-                        }
-                    }
-
-
-                    //
-                    //}
-                }
-            }
 
 
 
@@ -191,9 +199,10 @@ namespace Risk_Management
 
 
 
-            /* #region Open the pop up          
+
+             #region Open the pop up          
              Window02 x = new Window02(SerialList,TextList);
-             x.Height = 1000;
+             x.Height = 800;
              x.Width = 600;
              double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
              double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
@@ -203,7 +212,7 @@ namespace Risk_Management
              x.Top = (screenHeight / 2) - (windowHeight / 2);
              x.ShowDialog();
              #endregion 
-             */
+             
 
         }
     }

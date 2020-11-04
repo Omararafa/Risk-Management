@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Risk_Management"
-             mc:Ignorable="d" Width="600" Height="1000">
+             mc:Ignorable="d" Width="600" Height="800">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -25,6 +25,7 @@
                     <TextBlock TextAlignment="Center" TextDecorations="Underline" Foreground="Gray"  Grid.Column="0" Margin="15,85,151,10" FontWeight="Bold" FontSize="13" Grid.ColumnSpan="2"><Run Text="&quot;QUESTIONNAIRE SURVEY-MITIGATING RISKS DUE TO BIM"/><LineBreak/><Run Text="CONSTRUCTION IMPLEMENTATION IN EGYPT&quot;"/><LineBreak/><Run/></TextBlock>
 
                 </Grid>
+
 
                 <DataGrid Height="380" ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto"
