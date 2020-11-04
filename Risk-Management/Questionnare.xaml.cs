@@ -71,50 +71,61 @@ namespace Risk_Management
             foreach (var RowGroup in Table.RowGroups)
             {
 
-
+                int count = 0;
                 foreach (var Row in RowGroup.Rows)
                 {
-                    if (RowContent.Count == 2)
+                    if (count > 1)
                     {
-                        SerialList.Add(RowContent[0]);
-                        TextList.Add(RowContent[1]);
-                        RowContent.Clear();
-                    }
-                    else if (RowContent.Count != 2)
-                    {
-                        RowContent.Clear();
-                    }
-                    //if (CheckBox01.IsChecked == true)
-                    //{
-                    foreach (var Cell in Row.Cells)
-                    {
-                        // May want to start another list here in case there are multiple blocks.
-                        //BlockContent List "Paragraph"
-                        List<string> blockContent = new List<string>();
-                        //---------------------------
-                        foreach (var block in Cell.Blocks.OfType<Paragraph>())
+                        if (RowContent.Count == 2)
                         {
-                            // Probably want to start another list here to which to add in the next loop.
-                            //InlineContent List "Text"
-                            List<string> inlineContent = new List<string>();
+                            SerialList.Add(RowContent[0]);
+                            TextList.Add(RowContent[1]);
+                            RowContent.Clear();
+                        }
+                        else if (RowContent.Count != 2)
+                        {
+                            RowContent.Clear();
+                        }
+                        //if (CheckBox01.IsChecked == true)
+                        //{
+                        foreach (var Cell in Row.Cells)
+                        {
+                            // May want to start another list here in case there are multiple blocks.
+                            //BlockContent List "Paragraph"
+                            List<string> blockContent = new List<string>();
                             //---------------------------
-
-                            foreach (var inline in block.Inlines.OfType<Run>())
+                            foreach (var block in Cell.Blocks.OfType<Paragraph>())
                             {
-                                // Implement whatever in here depending the type of inline,
-                                // such as Span, Run, InlineUIContainer, etc.
-                                // I just assumed it was text.
-                                inlineContent.Add(new TextRange(inline.ContentStart, inline.ContentEnd).Text);
-                            }
-                            blockContent.Add(string.Join("", inlineContent.ToArray()));
+                                // Probably want to start another list here to which to add in the next loop.
+                                //InlineContent List "Text"
+                                List<string> inlineContent = new List<string>();
+                                //---------------------------
 
+                                foreach (var inline in block.Inlines.OfType<Run>())
+                                {
+                                    // Implement whatever in here depending the type of inline,
+                                    // such as Span, Run, InlineUIContainer, etc.
+                                    // I just assumed it was text.
+                                    inlineContent.Add(new TextRange(inline.ContentStart, inline.ContentEnd).Text);
+                                }
+                                foreach (var inline in block.Inlines.OfType<CheckBox>())
+                                {
+                                    // Implement whatever in here depending the type of inline,
+                                    // such as Span, Run, InlineUIContainer, etc.
+                                    // I just assumed it was text.
+                                    var test = inline.IsChecked;
+                                }
+                                blockContent.Add(string.Join("", inlineContent.ToArray()));
+
+                            }
+                            if (string.Join("", blockContent.ToArray()) != "")
+                            {
+                                RowContent.Add(string.Join("", blockContent.ToArray()));
+                            }
                         }
-                        if (string.Join("", blockContent.ToArray()) != "")
-                        {
-                            RowContent.Add(string.Join("", blockContent.ToArray()));
-                        }
+                        //}
                     }
-                    //}
+                    count = count+1;
                 }
             }
             //Adding Last Row Values

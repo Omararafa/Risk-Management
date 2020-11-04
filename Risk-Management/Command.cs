@@ -27,7 +27,7 @@ namespace Risk_Management
 
             #region Questionnare window
             Questionnare x = new Questionnare();
-            x.Height = 1000;
+            x.Height = 800;
             x.Width = 600;
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
             double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
