@@ -72,6 +72,9 @@
     <Compile Include="Window02.xaml.cs">
       <DependentUpon>Window02.xaml</DependentUpon>
     </Compile>
+    <Compile Include="XamlLocation.xaml.cs">
+      <DependentUpon>XamlLocation.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\UNI LOGO.jpeg" />
@@ -83,6 +86,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Window02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XamlLocation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -179,30 +179,10 @@ namespace Risk_Management
                 RowContent.Clear();
             }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-             #region Open the pop up          
-             Window02 x = new Window02(SerialList,TextList);
-             x.Height = 800;
+            Close();
+            #region Open the pop up          
+            Window02 x = new Window02(SerialList,TextList);
+             x.Height = 630;
              x.Width = 600;
              double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
              double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
@@ -211,9 +191,33 @@ namespace Risk_Management
              x.Left = (screenWidth / 2) - (windowWidth / 2);
              x.Top = (screenHeight / 2) - (windowHeight / 2);
              x.ShowDialog();
-             #endregion 
+            #endregion
+
              
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void HighCheck_Checked(object sender, RoutedEventArgs e)
+        {
+            MeduimCheck.IsEnabled = false;
+            LowCheck.IsEnabled = false;
+        }
+
+        private void MeduimCheck_Checked(object sender, RoutedEventArgs e)
+        {
+            HighCheck.IsEnabled = false;
+            LowCheck.IsEnabled = false;
+        }
+
+        private void LowCheck_Checked(object sender, RoutedEventArgs e)
+        {
+            MeduimCheck.IsEnabled = false;
+            HighCheck.IsEnabled = false;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Smart_Design_Plug_in_Updates
     class ClustersData
     {
 
-        public string SerialInApp { get; set; }
+        public string Serial { get; set; }
 
         public string Definition { get; set; }
 
@@ -24,7 +24,7 @@ namespace Smart_Design_Plug_in_Updates
             int count = 0;
             foreach (string Serial in SerialInAPP)
             {
-                Data.Add(new ClustersData() { SerialInApp=Serial,Definition=Definition[count] });
+                Data.Add(new ClustersData() { Serial=Serial,Definition=Definition[count] });
                 count = count + 1;
             }
 

@@ -24,8 +24,8 @@
                     <TextBlock TextAlignment="Center" TextDecorations="Underline" Foreground="Gray"  Grid.Column="0" Margin="15,85,151,10" FontWeight="Bold" FontSize="13" Grid.ColumnSpan="2"><Run Text="&quot;QUESTIONNAIRE SURVEY-MITIGATING RISKS DUE TO BIM"/><LineBreak/><Run Text="CONSTRUCTION IMPLEMENTATION IN EGYPT&quot;"/><LineBreak/><Run/></TextBlock>
 
                 </Grid>                
-                <FlowDocumentReader UseLayoutRounding="True" SnapsToDevicePixels="True" Height="561" ViewingMode="Scroll"
-                                     Zoom="10"  IsFindEnabled="False" IsTwoPageViewEnabled="False">
+                <FlowDocumentReader UseLayoutRounding="True" SnapsToDevicePixels="True" Height="564" ViewingMode="Scroll"
+                                     Zoom="10"  IsFindEnabled="False" IsTwoPageViewEnabled="False" IsPageViewEnabled="False">
                     <FlowDocumentReader.Resources>
                         <Style TargetType="{x:Type TableCell}">
                             <Setter Property="TextAlignment" Value="Center" />
@@ -34,7 +34,7 @@
                     <FlowDocument>
                         <Table x:Name="Table" CellSpacing="0">
                             <Table.Columns >
-                                <TableColumn  Width="40"/>
+                                <TableColumn  Width="60"/>
                                 <TableColumn />
                                 <TableColumn Width="58"/>
 
@@ -44,8 +44,8 @@
                                 <TableRow>
 
                                     <TableCell FontWeight="Bold" BorderBrush="Black" BorderThickness="1,1,1,1" ColumnSpan="1" Background="LightGray" >
-                                        <Paragraph>
-                                            <Run Text="Ser. in App"/>
+                                        <Paragraph Margin="0,19,0,0">
+                                            <Run Text="Serial"/>
                                         </Paragraph>
                                     </TableCell>
                                     <TableCell FontWeight="Bold" BorderBrush="Black" BorderThickness="0,1,1,1"  ColumnSpan="1" Background="LightGray" >
@@ -353,7 +353,7 @@
                                     </TableCell>
                                     <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
                                         <Paragraph Margin="0,8,0,0" FontWeight="Light">
-                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" x:Name="HighCheck" Checked="HighCheck_Checked" />
                                         </Paragraph>
                                     </TableCell>
                                 </TableRow>
@@ -371,7 +371,7 @@
                                     </TableCell>
                                     <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
                                         <Paragraph Margin="0,8,0,0" FontWeight="Light">
-                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" x:Name="MeduimCheck" Checked="MeduimCheck_Checked"/>
                                         </Paragraph>
                                     </TableCell>
                                 </TableRow>
@@ -389,7 +389,7 @@
                                     </TableCell>
                                     <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
                                         <Paragraph Margin="0,8,0,0" FontWeight="Light">
-                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" x:Name="LowCheck" Checked="LowCheck_Checked"/>
                                         </Paragraph>
                                     </TableCell>
                                 </TableRow>
@@ -537,7 +537,7 @@
                             <ColumnDefinition Width="*"/>
 
                         </Grid.ColumnDefinitions>
-                        <Button  Height="25" Margin="5 12 5 18" Grid.Column="1">Cancel</Button>
+                        <Button  Height="25" Margin="5 12 5 18" Grid.Column="1" Click="Button_Click">Cancel</Button>
                         <Button Height="25" Margin="5 12 5 18" Grid.Column="2" Click="Next" >Next</Button>
                     </Grid>
                 </Border>

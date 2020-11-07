@@ -32,12 +32,23 @@ namespace Risk_Management
             SetPropertires();
             var Data = ClustersData.GetData(SerialList, TextList);
             Grid1.ItemsSource = Data;
-            
+
+
+
+            /*var col = Grid1.Columns[0] as DataGridTextColumn;
+            var colone = Grid1.Columns[1] as DataGridTextColumn;
+            var style = new Style(typeof(TextBlock));
+            style.Setters.Add(new Setter(TextBlock.TextWrappingProperty, TextWrapping.Wrap));
+            style.Setters.Add(new Setter(TextBlock.VerticalAlignmentProperty, VerticalAlignment.Center));
+            col.ElementStyle = style;
+            colone.ElementStyle = style;*/
+
 
 
 
 
             //Grid1.ItemsSource = ExistingData.Existing(Data);
+
         }
         void SetPropertires()
         {
@@ -62,20 +73,54 @@ namespace Risk_Management
             }
             return bmp;
         }
-        private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Grid1_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
-            
+            if (e.Column.Header.ToString() == "Definition")
+            {
+                var col = e.Column as DataGridTextColumn;
+                col.Width = 500;
+                var style = new Style(typeof(TextBlock));
+                style.Setters.Add(new Setter(TextBlock.TextWrappingProperty, TextWrapping.Wrap));
+                style.Setters.Add(new Setter(TextBlock.VerticalAlignmentProperty, VerticalAlignment.Center));
+
+                col.ElementStyle = style;
+            }
+            else
+            {
+                var col = e.Column as DataGridTextColumn;
+                col.Width = 50;
+                var style = new Style(typeof(TextBlock));
+                style.Setters.Add(new Setter(TextBlock.TextWrappingProperty, TextWrapping.Wrap));
+                style.Setters.Add(new Setter(TextBlock.VerticalAlignmentProperty, VerticalAlignment.Center));
+                style.Setters.Add(new Setter(TextBlock.HorizontalAlignmentProperty, HorizontalAlignment.Center));
+
+                col.ElementStyle = style;
+            }
         }
 
-        private void listBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
 
+
+        private void Close(object sender, RoutedEventArgs e)
+        {
+            Close();
 
         }
 
-        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
+            #region Open the pop up          
+            XamlLocation x = new XamlLocation();
+            x.Height = 160;
+            x.Width = 350;
+            double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+            double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+            double windowWidth = x.Width;
+            double windowHeight = x.Height;
+            x.Left = (screenWidth / 2) - (windowWidth / 2);
+            x.Top = (screenHeight / 2) - (windowHeight / 2);
+            x.ShowDialog();
+            #endregion
         }
     }
 }

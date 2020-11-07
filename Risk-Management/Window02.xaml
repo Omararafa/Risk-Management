@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Risk_Management"
-             mc:Ignorable="d" Width="600" Height="800">
+             mc:Ignorable="d" Width="600" Height="630">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -13,6 +13,7 @@
         </Grid.ColumnDefinitions>
         <Border Grid.ColumnSpan="2" >
             <StackPanel>
+                <Border BorderThickness="0 1 0 1" BorderBrush="Gray">
                 <Grid Height="150">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="185*"/>
@@ -23,16 +24,20 @@
                     <TextBlock Grid.Column="0" Margin="15,15,151,80" FontWeight="Bold" FontSize="13" Grid.ColumnSpan="2"><Run Text="Cairo University"/><LineBreak/><Run Text="Faculty Of Engineering"/><LineBreak/><Run Text="Engineering And Construction Management Department"/><LineBreak/><Run/></TextBlock>
                     <Line Stretch="Fill" Stroke="Black" X2="1" Grid.ColumnSpan="2" Margin="15,70,136,70"/>
                     <TextBlock TextAlignment="Center" TextDecorations="Underline" Foreground="Gray"  Grid.Column="0" Margin="15,85,151,10" FontWeight="Bold" FontSize="13" Grid.ColumnSpan="2"><Run Text="&quot;QUESTIONNAIRE SURVEY-MITIGATING RISKS DUE TO BIM"/><LineBreak/><Run Text="CONSTRUCTION IMPLEMENTATION IN EGYPT&quot;"/><LineBreak/><Run/></TextBlock>
-
                 </Grid>
+                </Border>
+                <TextBlock TextAlignment="Center" TextDecorations="Underline" Foreground="Black"  Grid.Column="0" Margin="0,-22,0,0" FontWeight="Bold" FontSize="13"><Run Text="User Answers"/><LineBreak/></TextBlock>
 
+                <Border BorderThickness="0 1 0 0">
+                    <DataGrid Height="380" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                          Margin="15 -15 15 15" Name="Grid1" CanUserAddRows="False" CanUserReorderColumns="True"
+                          CanUserResizeColumns="True" AlternatingRowBackground="#eee" AutoGenerateColumns="True"
+                          VerticalGridLinesBrush="Black" GridLinesVisibility="All" AutoGeneratingColumn="Grid1_AutoGeneratingColumn"
 
-                <DataGrid Height="380" ScrollViewer.VerticalScrollBarVisibility="Auto"
-                          ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                          Margin="20 0 15 0" Name="Grid1" CanUserAddRows="False"
-                          ColumnWidth="126.7"  CanUserReorderColumns="True"
-                          CanUserResizeColumns="True" AlternatingRowBackground="#eee"
-                          ></DataGrid>
+                           >
+                    </DataGrid>
+                </Border>
+
                 <Border Background="#eee" BorderBrush="Gray" BorderThickness="0 1 0 0">
                     <Grid >
                         <Grid.ColumnDefinitions>
@@ -41,6 +46,18 @@
                             <ColumnDefinition Width="*"/>
 
                         </Grid.ColumnDefinitions>
+                    </Grid>
+                </Border>
+                <Border Background="#eee" BorderBrush="Gray" BorderThickness="0 1 0 0">
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+
+                        </Grid.ColumnDefinitions>
+                        <Button  Height="25" Margin="5 12 5 18" Grid.Column="1" Click="Close" >Cancel</Button>
+                        <Button Height="25" Margin="5 12 5 18" Grid.Column="2" Click="Button_Click"  >Next</Button>
                     </Grid>
                 </Border>
 
