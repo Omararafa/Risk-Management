@@ -33,7 +33,6 @@ namespace Risk_Management
         void SetPropertires()
         {
             System.Drawing.Image img = Properties.Resources.UNI_LOGO;
-            _01_jpg.Source = GetImageSource(img);
             this.Icon= GetImageSource(img);
         }
 
@@ -182,7 +181,7 @@ namespace Risk_Management
             Close();
             #region Open the pop up          
             Window02 x = new Window02(SerialList,TextList);
-             x.Height = 630;
+             x.Height = 515;
              x.Width = 600;
              double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
              double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;

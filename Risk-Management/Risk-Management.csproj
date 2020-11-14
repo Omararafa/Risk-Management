@@ -69,6 +69,9 @@
     <Compile Include="Questionnare.xaml.cs">
       <DependentUpon>Questionnare.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WelcomeWindow.xaml.cs">
+      <DependentUpon>WelcomeWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Window02.xaml.cs">
       <DependentUpon>Window02.xaml</DependentUpon>
     </Compile>
@@ -78,10 +81,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\UNI LOGO.jpeg" />
+    <None Include="Resources\Button.jpeg" />
     <Content Include="Risk-Management.addin" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Questionnare.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WelcomeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

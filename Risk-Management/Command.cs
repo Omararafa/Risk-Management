@@ -25,10 +25,10 @@ namespace Risk_Management
             Document doc = uidoc.Document;
             // Access current selection
 
-            #region Questionnare window
-            Questionnare x = new Questionnare();
-            x.Height = 800;
-            x.Width = 600;
+            #region Welcome window
+            WelcomeWindow x = new WelcomeWindow();
+            x.Height = 425;
+            x.Width = 673.171;
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
             double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
             double windowWidth = x.Width;

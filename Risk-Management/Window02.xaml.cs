@@ -53,7 +53,6 @@ namespace Risk_Management
         void SetPropertires()
         {
             System.Drawing.Image img = Properties.Resources.UNI_LOGO;
-            _01_jpg.Source = GetImageSource(img);
             this.Icon = GetImageSource(img);
         }
 
