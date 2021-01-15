@@ -200,23 +200,36 @@ namespace Risk_Management
         {
             Close();
         }
-
         private void HighCheck_Checked(object sender, RoutedEventArgs e)
         {
             MeduimCheck.IsEnabled = false;
             LowCheck.IsEnabled = false;
         }
-
+        private void HighCheck_Unchecked(object sender, RoutedEventArgs e)
+        {
+            MeduimCheck.IsEnabled = true;
+            LowCheck.IsEnabled = true;
+        }
         private void MeduimCheck_Checked(object sender, RoutedEventArgs e)
         {
             HighCheck.IsEnabled = false;
             LowCheck.IsEnabled = false;
         }
-
+        private void MeduimCheck_Unchecked(object sender, RoutedEventArgs e)
+        {
+            HighCheck.IsEnabled = true;
+            LowCheck.IsEnabled = true;
+        }
         private void LowCheck_Checked(object sender, RoutedEventArgs e)
         {
             MeduimCheck.IsEnabled = false;
             HighCheck.IsEnabled = false;
         }
-    }
+        private void LowCheck_Unchecked(object sender, RoutedEventArgs e)
+        {
+            MeduimCheck.IsEnabled = true;
+            HighCheck.IsEnabled = true;
+        }
+ 
+        }
 }

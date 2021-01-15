@@ -344,7 +344,7 @@
                                     </TableCell>
                                     <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
                                         <Paragraph Margin="0,8,0,0" FontWeight="Light">
-                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" x:Name="HighCheck" Checked="HighCheck_Checked" />
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" x:Name="HighCheck" Checked="HighCheck_Checked" Unchecked="HighCheck_Unchecked" />
                                         </Paragraph>
                                     </TableCell>
                                 </TableRow>
@@ -362,7 +362,7 @@
                                     </TableCell>
                                     <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
                                         <Paragraph Margin="0,8,0,0" FontWeight="Light">
-                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" x:Name="MeduimCheck" Checked="MeduimCheck_Checked"/>
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" x:Name="MeduimCheck" Checked="MeduimCheck_Checked" Unchecked="MeduimCheck_Unchecked" />
                                         </Paragraph>
                                     </TableCell>
                                 </TableRow>
@@ -380,7 +380,7 @@
                                     </TableCell>
                                     <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
                                         <Paragraph Margin="0,8,0,0" FontWeight="Light">
-                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" x:Name="LowCheck" Checked="LowCheck_Checked"/>
+                                            <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" x:Name="LowCheck" Checked="LowCheck_Checked" Unchecked="LowCheck_Unchecked"/>
                                         </Paragraph>
                                     </TableCell>
                                 </TableRow>

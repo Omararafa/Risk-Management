@@ -25,7 +25,6 @@
                            >
                     </DataGrid>
                 </Border>
-
                 <Border Background="#eee" BorderBrush="Gray" BorderThickness="0 1 0 0">
                     <Grid >
                         <Grid.ColumnDefinitions>
@@ -46,6 +45,8 @@
                         </Grid.ColumnDefinitions>
                         <Button  Height="25" Margin="5 12 5 18" Grid.Column="1" Click="Close" >Cancel</Button>
                         <Button Height="25" Margin="5 12 5 18" Grid.Column="2" Click="Button_Click"  >Next</Button>
+                        <Button HorizontalAlignment="Right" Width="184" Height="25" Content="Export" Click="btnBook_Click" Name="btnBook" Margin="0,12,3,18"/>
+
                     </Grid>
                 </Border>
 
@@ -53,4 +54,5 @@
             </StackPanel>
         </Border>
     </Grid>
+
 </Window>
