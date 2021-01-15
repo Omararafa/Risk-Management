@@ -23,6 +23,7 @@ namespace Risk_Management
     /// </summary>
     public partial class Questionnare : Window
     {
+        public string ExcelLocation = "";
         public Questionnare()
         {
             InitializeComponent();
@@ -190,6 +191,7 @@ namespace Risk_Management
              x.Left = (screenWidth / 2) - (windowWidth / 2);
              x.Top = (screenHeight / 2) - (windowHeight / 2);
              x.ShowDialog();
+            ExcelLocation = x.ExcelLocation;
             #endregion
 
              

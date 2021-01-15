@@ -21,6 +21,7 @@ namespace Risk_Management
     /// </summary>
     public partial class XamlLocation : Window
     {
+        public string ExcelLocation = "";
         public XamlLocation()
         {
             InitializeComponent();
@@ -34,9 +35,18 @@ namespace Risk_Management
         private void btnOpenFile_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "XML files (*.xml)|*.xml|All files (*.*)|*.*";
+            openFileDialog.Filter = "Excel files (*.csv)|*.csv|All files (*.*)|*.*";
             openFileDialog.ShowDialog();
+            ExcelLocation= openFileDialog.FileName;
             Location.Text=openFileDialog.FileName;
+            
+            
+        }
+
+        private void Register_Click(object sender, RoutedEventArgs e)
+        {
+            ExcelLocation = Location.Text;
+            Close();
         }
     }
 }

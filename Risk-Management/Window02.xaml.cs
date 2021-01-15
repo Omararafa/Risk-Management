@@ -27,6 +27,7 @@ namespace Risk_Management
     /// </summary>
     public partial class Window02 : Window
     {
+        public string ExcelLocation = "";
         //Image / Grid Sorter
         #region
         void SetPropertires()
@@ -250,6 +251,7 @@ namespace Risk_Management
             x.Left = (screenWidth / 2) - (windowWidth / 2);
             x.Top = (screenHeight / 2) - (windowHeight / 2);
             x.ShowDialog();
+            ExcelLocation=x.ExcelLocation;
             #endregion
         }
         private void btnBook_Click(object sender, RoutedEventArgs e)
