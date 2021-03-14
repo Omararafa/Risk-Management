@@ -32,10 +32,20 @@ namespace Risk_Management
           ref string message,
           ElementSet elements)
         {
+
             UIApplication uiapp = commandData.Application;
             UIDocument uidoc = uiapp.ActiveUIDocument;
             Application app = uiapp.Application;
             Document doc = uidoc.Document;
+            var CostImpactViewtestt = new FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Views).Where(m => m.Name == "Cost Risk Impact").FirstOrDefault();
+            var CostImpactVieww = CostImpactViewtestt as View3D;
+            if (CostImpactVieww == null)
+            {
+                Properties.Settings.Default.Max = "23";
+                Properties.Settings.Default.Min = "5";
+                Properties.Settings.Default.Meduim = "5";
+            }
+
             // Access current selection
 
             #region Welcome window
@@ -77,12 +87,23 @@ namespace Risk_Management
                 var collector = new FilteredElementCollector(doc);
                 var viewFamilyType = collector.OfClass(typeof(ViewFamilyType)).Cast<ViewFamilyType>()
                   .FirstOrDefault(m => m.ViewFamily == ViewFamily.ThreeDimensional);
-                var CostImpactView=View3D.CreateIsometric(doc, viewFamilyType.Id);
-                CostImpactView.Name = "Cost Risk Impact";
-                CostImpactView.DisplayStyle = DisplayStyle.ShadingWithEdges;
-                var TimeImpactView = View3D.CreateIsometric(doc, viewFamilyType.Id);
-                TimeImpactView.DisplayStyle = DisplayStyle.ShadingWithEdges;
-                TimeImpactView.Name = "Time Risk Impact";
+                var CostImpactViewtest = new FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Views).Where(m => m.Name == "Cost Risk Impact").FirstOrDefault();
+                var CostImpactView = CostImpactViewtest as View3D;
+                if (CostImpactView == null)
+                {
+                    CostImpactView = View3D.CreateIsometric(doc, viewFamilyType.Id);
+                    CostImpactView.Name = "Cost Risk Impact";
+                    CostImpactView.DisplayStyle = DisplayStyle.ShadingWithEdges;
+                }
+                var TimeImpactViewtest = new FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Views).Where(m => m.Name == "Time Risk Impact").FirstOrDefault();
+                var TimeImpactView = TimeImpactViewtest as View3D;
+                if (TimeImpactView == null)
+                {
+                    TimeImpactView = View3D.CreateIsometric(doc, viewFamilyType.Id);
+                    TimeImpactView.DisplayStyle = DisplayStyle.ShadingWithEdges;
+                    TimeImpactView.Name = "Time Risk Impact";
+                }
+
 
 
                 #region Get Elements Filters
@@ -668,6 +689,9 @@ namespace Risk_Management
                 ogs.SetProjectionFillPatternId(solidFill.Id);
                 Color TimeColor = null;
                 Color CostColor = null;
+                int max = Convert.ToInt32(Properties.Settings.Default.Max);
+                int min= Convert.ToInt32(Properties.Settings.Default.Min);
+                int med = Convert.ToInt32(Properties.Settings.Default.Meduim);
                 foreach (var item in MainDictionary)
                 {
 
@@ -676,28 +700,28 @@ namespace Risk_Management
                         if (item.Key == Ex.Id)
                         {
 
-                            if (Ex.Time < 5)
+                            if (Ex.Time < min)
                             {
                                 TimeColor = new Color(0, 255, 0);
                             }
-                            else if (Ex.Time >= 5&& Ex.Time < 23)
+                            else if (Ex.Time >= med&& Ex.Time < max)
                             {
                                 TimeColor = new Color(255, 255, 0);
                             }
-                            else if (Ex.Time > 23)
+                            else if (Ex.Time > max)
                             {
                                 TimeColor = new Color(255, 0, 0);
                             }
 
-                            if (Ex.cost < 5)
+                            if (Ex.cost < min)
                             {
                                 CostColor = new Color(0, 255, 0);
                             }
-                            else if (Ex.cost >= 5 && Ex.cost < 23)
+                            else if (Ex.cost >= med && Ex.cost < max)
                             {
                                 CostColor = new Color(255, 255, 0);
                             }
-                            else if (Ex.cost > 23)
+                            else if (Ex.cost > max)
                             {
                                 CostColor = new Color(255, 0, 0);
                             }

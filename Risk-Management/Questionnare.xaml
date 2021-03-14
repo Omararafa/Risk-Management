@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Risk_Management"
-             mc:Ignorable="d" Width="600" Height="790">
+             mc:Ignorable="d" Width="600" Height="530">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="430*"/>
@@ -15,7 +15,7 @@
                 <TextBlock  Margin="15,15,0,0" FontWeight="Bold" FontSize="13">Attention:</TextBlock>
                 <TextBlock Margin="15,5,0,0" FontSize="13" FontWeight="Bold">Please, use your project’s customized information to answer the following points (facts).</TextBlock>
                 <TextBlock Margin="15,5,0,0" FontSize="11">Note: Check the box if the point fact matches the project under the study.</TextBlock>
-                <FlowDocumentReader UseLayoutRounding="True" SnapsToDevicePixels="True" Height="627" ViewingMode="Scroll"
+                <FlowDocumentReader UseLayoutRounding="True" SnapsToDevicePixels="True" Height="369" ViewingMode="Scroll"
                                      Zoom="10"  IsFindEnabled="False" IsTwoPageViewEnabled="False" IsPageViewEnabled="False">
                     <FlowDocumentReader.Resources>
                         <Style TargetType="{x:Type TableCell}">

@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Risk_Management"
              mc:Ignorable="d" 
-             d:DesignHeight="160" d:DesignWidth="350">
+             d:DesignHeight="170" d:DesignWidth="350">
     <Grid>
         <StackPanel>
             <TextBox x:Name="ErrorName" Margin="0 5 0 10" HorizontalAlignment="Center" FontSize="14" FontWeight="Regular" Foreground="RoyalBlue" BorderBrush="Transparent">Please choose Excel file location</TextBox>

@@ -26,10 +26,18 @@ namespace Risk_Management
 
             Image img = Properties.Resources.Button;
             ImageSource imgsc = GetImageSource(img);
-
+            Image imgCost = Properties.Resources.CostView;
+            ImageSource imgscCost = GetImageSource(imgCost);
+            Image imgTime = Properties.Resources.TimeImpact;
+            ImageSource imgscTime = GetImageSource(imgTime);
+            Image RiskImg = Properties.Resources.RiskScale;
+            ImageSource imgscRisk = GetImageSource(RiskImg);
 
             PushButton button = panel.AddItem(new PushButtonData("BIM Risks Eliminator", "BIM Risks Eliminator", thisassemblypath, "Risk_Management.Command")) as PushButton;
-
+            PushButton buttonZero = panel.AddItem(new PushButtonData("Edit Risk Scale", "Edit Risk Scale", thisassemblypath, "Risk_Management.RiskScaleCommand")) as PushButton;
+            PushButton buttonOne = panel.AddItem(new PushButtonData("Cost View", "Show Cost 3D View", thisassemblypath, "Risk_Management.ActiveCostView")) as PushButton;
+            PushButton buttonTwo = panel.AddItem(new PushButtonData("Time View", "Show 3D Time View", thisassemblypath, "Risk_Management.ActiveTimeView")) as PushButton;
+            
             // button.ToolTip = "Export sheets as PDF and CAD with the ability of sorting them in folders";
 
             // button.LongDescription = "User can filter the sheets and select the sheet to be exported and after that it can be exported as PDF or CAD or both then sheets can be sorted in specific folders using the grouping option";
@@ -39,6 +47,18 @@ namespace Risk_Management
             button.LargeImage = imgsc;
 
             button.Enabled = true;
+
+            buttonOne.Image = imgscCost;
+            buttonOne.LargeImage = imgscCost;
+            buttonOne.Enabled = true;
+
+            buttonTwo.Image = imgscTime;
+            buttonTwo.LargeImage = imgscTime;
+            buttonTwo.Enabled = true;
+
+            buttonZero.Image = imgscRisk;
+            buttonZero.LargeImage = imgscRisk;
+            buttonZero.Enabled = true;
 
             //  ContextualHelp ContextHelp = new ContextualHelp(ContextualHelpType.Url, "http://arcades-arc.com/");
 

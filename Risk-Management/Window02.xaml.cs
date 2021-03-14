@@ -242,7 +242,7 @@ namespace Risk_Management
             Close();
             #region Open the pop up          
             XamlLocation x = new XamlLocation();
-            x.Height = 160;
+            x.Height = 170;
             x.Width = 350;
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
             double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
