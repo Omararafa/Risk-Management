@@ -13,9 +13,12 @@ namespace Risk_Management
     {
         public class Foo
         {
+            public string Description { get; set; }
             public string Id { get; set; }
-            public int Time { get; set; }
-            public int cost { get; set; }
+            public string PlannedDuration { get; set; }
+            public string ImpactedDuration { get; set; }
+            public string PlannedCost { get; set; }
+            public string ImpactedCost { get; set; }
         }
         public Dictionary<string, string> Values { get; private set; }
 
@@ -34,18 +37,18 @@ namespace Risk_Management
             return test;
         }
 
-       /* public void SetStyle(string style)
-        {
-            int styleIndex = _keys.IndexOf(style);
+        /* public void SetStyle(string style)
+         {
+             int styleIndex = _keys.IndexOf(style);
 
-            if (styleIndex == -1)
-            {
-                throw new ArgumentException($"Style '{style}' cannot be find.");
-            }
+             if (styleIndex == -1)
+             {
+                 throw new ArgumentException($"Style '{style}' cannot be find.");
+             }
 
-            IEnumerable<List<string>> table = _facadesDb.Select(row => row.Values.Select(value => value.ToString()).ToList());
+             IEnumerable<List<string>> table = _facadesDb.Select(row => row.Values.Select(value => value.ToString()).ToList());
 
-            Values = table.ToDictionary(row => row[0], row => row[styleIndex]);
-        }*/
+             Values = table.ToDictionary(row => row[0], row => row[styleIndex]);
+         }*/
     }
 }

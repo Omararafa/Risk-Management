@@ -23,6 +23,7 @@ namespace Risk_Management
     public partial class WelcomeWindow : Window
     {
         public string ExcelLocation = "";
+        public string Trade = "";
         public WelcomeWindow()
         {
             InitializeComponent();
@@ -67,11 +68,10 @@ namespace Risk_Management
         private void Next_Click(object sender, RoutedEventArgs e)
         {
             Close();
-
             #region Questionnare window
-            Questionnare x = new Questionnare();
-            x.Height = 530;
-            x.Width = 600;
+            Trades x = new Trades();
+            x.Height = 310;
+            x.Width = 650;
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
             double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
             double windowWidth = x.Width;
@@ -79,12 +79,14 @@ namespace Risk_Management
             x.Left = (screenWidth / 2) - (windowWidth / 2);
             x.Top = (screenHeight / 2) - (windowHeight / 2);
             x.ShowDialog();
+            Trade = x.Trade;
             ExcelLocation = x.ExcelLocation;
             #endregion
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Trade = "";
             Close();
         }
     }

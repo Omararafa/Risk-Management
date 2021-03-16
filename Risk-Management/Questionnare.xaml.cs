@@ -24,10 +24,16 @@ namespace Risk_Management
     public partial class Questionnare : Window
     {
         public string ExcelLocation = "";
-        public Questionnare()
+        public string Trade = "";
+        public Questionnare(string trade)
         {
-            InitializeComponent();
-            SetPropertires();
+            Trade = trade;
+            if (!(string.IsNullOrEmpty(Trade)))
+            {
+                InitializeComponent();
+                SetPropertires();
+            }
+
 
         }
 
@@ -181,7 +187,7 @@ namespace Risk_Management
 
             Close();
             #region Open the pop up          
-            Window02 x = new Window02(SerialList,TextList);
+            Window02 x = new Window02(SerialList,TextList,Trade);
              x.Height = 515;
              x.Width = 600;
              double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
@@ -192,6 +198,7 @@ namespace Risk_Management
              x.Top = (screenHeight / 2) - (windowHeight / 2);
              x.ShowDialog();
             ExcelLocation = x.ExcelLocation;
+            //Trade = "";
             #endregion
 
              
@@ -201,6 +208,7 @@ namespace Risk_Management
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Close();
+            Trade = "";
         }
         private void HighCheck_Checked(object sender, RoutedEventArgs e)
         {

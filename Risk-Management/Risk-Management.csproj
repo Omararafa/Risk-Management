@@ -97,6 +97,10 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data.cs" />
+    <Compile Include="FINAL.xaml.cs">
+      <DependentUpon>FINAL.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RiskScaleCommand.cs" />
     <Compile Include="ActiveTimeView.cs" />
     <Compile Include="ActiveCostView.cs" />
@@ -129,6 +133,9 @@
     <Compile Include="RiskScaleWPF.xaml.cs">
       <DependentUpon>RiskScaleWPF.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Trades.xaml.cs">
+      <DependentUpon>Trades.xaml</DependentUpon>
+    </Compile>
     <Compile Include="XamlLocation.xaml.cs">
       <DependentUpon>XamlLocation.xaml</DependentUpon>
     </Compile>
@@ -149,6 +156,10 @@
     <None Include="Tasks.csv" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="FINAL.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Questionnare.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -162,6 +173,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RiskScaleWPF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Trades.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

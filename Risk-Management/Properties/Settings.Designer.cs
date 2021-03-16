@@ -58,5 +58,17 @@ namespace Risk_Management.Properties {
                 this["Meduim"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Trades {
+            get {
+                return ((string)(this["Trades"]));
+            }
+            set {
+                this["Trades"] = value;
+            }
+        }
     }
 }

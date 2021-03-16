@@ -22,8 +22,10 @@ namespace Risk_Management
     public partial class XamlLocation : Window
     {
         public string ExcelLocation = "";
-        public XamlLocation()
+        public string Trade = "";
+        public XamlLocation(string trade)
         {
+            Trade = trade;
             InitializeComponent();
         }
 

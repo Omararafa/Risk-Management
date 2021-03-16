@@ -17,7 +17,7 @@ namespace Axcel
         /// <param name="worksheetName"></param>
         /// <param name="saveAsLocation"></param>
         /// <returns></returns>
-        public bool WriteDataTableToExcel(System.Data.DataTable dataTable, string worksheetName, string ReporType)
+        public bool WriteDataTableToExcel(System.Data.DataTable dataTable, string worksheetName, string ReporType,string Trade)
         {
             Microsoft.Office.Interop.Excel.Application excel;
             Microsoft.Office.Interop.Excel.Workbook excelworkBook;
@@ -40,12 +40,13 @@ namespace Axcel
                 excelSheet = (Microsoft.Office.Interop.Excel.Worksheet)excelworkBook.ActiveSheet;
                 excelSheet.Name = worksheetName;
 
-
-                excelSheet.Cells[1, 1] = ReporType;
-                excelSheet.Cells[1, 2] = "Date : " + DateTime.Now.ToShortDateString();
+                excelSheet.Cells[1, 1] = "Trade";
+                excelSheet.Cells[1, 2] = Trade;
+                excelSheet.Cells[2, 1] = ReporType;
+                excelSheet.Cells[2, 2] = "Date : " + DateTime.Now.ToShortDateString();
 
                 // loop through each row and add values to our sheet
-                int rowcount = 2;
+                int rowcount = 3;
 
                 foreach (DataRow datarow in dataTable.Rows)
                 {
@@ -87,6 +88,100 @@ namespace Axcel
                 excelCellrange = excelSheet.Range[excelSheet.Cells[1, 1], excelSheet.Cells[2, dataTable.Columns.Count]];
                 FormattingExcelCells(excelCellrange, "#000099", System.Drawing.Color.White, true);
 
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                excelSheet = null;
+                excelCellrange = null;
+                excelworkBook = null;
+            }
+
+        }
+        public bool WriteDataTableToExcelTwo(System.Data.DataTable dataTable)
+        {
+            Microsoft.Office.Interop.Excel.Application excel;
+            Microsoft.Office.Interop.Excel.Workbook excelworkBook;
+            Microsoft.Office.Interop.Excel.Worksheet excelSheet;
+            Microsoft.Office.Interop.Excel.Range excelCellrange;
+
+            try
+            {
+                // Start Excel and get Application object.
+                excel = new Microsoft.Office.Interop.Excel.Application();
+
+                // for making Excel visible
+                excel.Visible = true;
+                excel.DisplayAlerts = false;
+
+                // Creation a new Workbook
+                excelworkBook = excel.Workbooks.Add(Type.Missing);
+
+                // Workk sheet
+                excelSheet = (Microsoft.Office.Interop.Excel.Worksheet)excelworkBook.ActiveSheet;
+                excelSheet.Name = "Risk Management";
+
+
+
+                excelSheet.Cells[1, 2] = "Report";
+                excelSheet.Cells[1,3] = "Date : " + DateTime.Now.ToShortDateString();
+                excelSheet.Cells[2, 2] = "Activity";
+                excelSheet.Cells[2, 3] = "Cost Risk Factor";
+                excelSheet.Cells[2, 4] = "Time Risk Factor";
+                excelSheet.Cells[2, 5] = "Proposed Mitigation";
+
+                // loop through each row and add values to our sheet
+                int rowcount =2;
+
+                foreach (DataRow datarow in dataTable.Rows)
+                {
+                    rowcount += 1;
+                    for (int i = 1; i <= dataTable.Columns.Count; i++)
+                    {
+                        // on the first iteration we add the column headers
+                        if (rowcount == 3)
+                        {
+                            excelSheet.Cells[2, i] = dataTable.Columns[i - 1].ColumnName;
+                            excelSheet.Cells.Font.Color = System.Drawing.Color.Black;
+                        }
+                        excelSheet.Cells[rowcount, i] = datarow[i - 1].ToString();
+                        //for alternate rows
+                        if (rowcount > 3)
+                        {
+                            if (i == dataTable.Columns.Count)
+                            {
+                                if (rowcount % 2 == 0)
+                                {
+                                    excelCellrange = excelSheet.Range[excelSheet.Cells[rowcount, 1], excelSheet.Cells[rowcount, dataTable.Columns.Count]];
+                                    FormattingExcelCells(excelCellrange, "#CCCCFF", System.Drawing.Color.Black, false);
+                                }
+
+                            }
+                        }
+
+                    }
+
+                }
+
+
+
+
+                // now we resize the columns
+                excelCellrange = excelSheet.Range[excelSheet.Cells[1, 1], excelSheet.Cells[rowcount, dataTable.Columns.Count]];
+                excelCellrange.EntireColumn.AutoFit();
+                Microsoft.Office.Interop.Excel.Borders border = excelCellrange.Borders;
+                border.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
+                border.Weight = 2d;
+
+                excelCellrange = excelSheet.Range[excelSheet.Cells[1, 1], excelSheet.Cells[2, dataTable.Columns.Count]];
+                FormattingExcelCells(excelCellrange, "#000099", System.Drawing.Color.White, true);
+                var excelCellrangee = excelSheet.Range[excelSheet.Cells[1, 1],excelSheet.Cells[2,1]];
+                excelCellrangee.EntireColumn.Delete();
                 return true;
             }
             catch (Exception ex)

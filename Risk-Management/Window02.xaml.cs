@@ -28,6 +28,7 @@ namespace Risk_Management
     public partial class Window02 : Window
     {
         public string ExcelLocation = "";
+        public string Trade = "";
         //Image / Grid Sorter
         #region
         void SetPropertires()
@@ -85,9 +86,9 @@ namespace Risk_Management
         #endregion
 
         //Main Execution
-        public Window02(List<string> SerialList, List<string> TextList)
+        public Window02(List<string> SerialList, List<string> TextList,string trade)
         {
-
+            Trade = trade;
             InitializeComponent();
             SetPropertires();
             var Data = ClustersData.GetData(SerialList, TextList);
@@ -229,11 +230,12 @@ namespace Risk_Management
 
         }
         #endregion
-
+        
         //Buttons
         #region
         private void Close(object sender, RoutedEventArgs e)
         {
+            Trade = "";
             Close();
 
         }
@@ -241,7 +243,7 @@ namespace Risk_Management
         {
             Close();
             #region Open the pop up          
-            XamlLocation x = new XamlLocation();
+            XamlLocation x = new XamlLocation(Trade);
             x.Height = 170;
             x.Width = 350;
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
@@ -258,7 +260,7 @@ namespace Risk_Management
         {
             Axcel.ExcelUtlity obj = new Axcel.ExcelUtlity();
             DataTable dt = ConvertToDataTable(list);
-            obj.WriteDataTableToExcel(dt, "Risk Management","Selected Risks");
+            obj.WriteDataTableToExcel(dt, "Risk Management","Selected Risks",Trade);
         }
         #endregion
     }

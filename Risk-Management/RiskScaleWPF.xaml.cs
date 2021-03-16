@@ -21,8 +21,8 @@ namespace Risk_Management
     /// </summary>
     public partial class RiskScaleWPF: Window
     {
-        public int min = 5;
-        public int max= 23;
+        public double min = 0.16;
+        public double max= 0.39;
         public string ExcelLocation = "";
         public RiskScaleWPF()
         {
@@ -39,9 +39,9 @@ namespace Risk_Management
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
-            Properties.Settings.Default.Max = "23";
-            Properties.Settings.Default.Min = "5";
-            Properties.Settings.Default.Meduim = "5";
+            Properties.Settings.Default.Max = "0.39";
+            Properties.Settings.Default.Min = "0.16";
+            Properties.Settings.Default.Meduim = "0.16";
             Close();
         }
     }
