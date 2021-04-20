@@ -8,7 +8,7 @@
              d:DesignHeight="310" d:DesignWidth="650">
     <Grid>
         <StackPanel>
-            <TextBox x:Name="ErrorName" Margin="0 5 0 10" HorizontalAlignment="Center" FontSize="14" FontWeight="Regular" Foreground="RoyalBlue" BorderBrush="Transparent">Please choose Excel file location</TextBox>
+            <TextBox x:Name="ErrorName" Margin="0 5 0 10" HorizontalAlignment="Center" FontSize="14" FontWeight="Regular" Foreground="RoyalBlue" BorderBrush="Transparent">Please choose the trade</TextBox>
             <TextBlock Margin="15,0,0,0" TextWrapping="Wrap">
                 -For the purpose of preforming a good analysis to the risks, Risks should be 
                 assigned to Project Activities expected to be affected by the risks. Activities 

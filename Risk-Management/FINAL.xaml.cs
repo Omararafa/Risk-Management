@@ -55,6 +55,12 @@ namespace Risk_Management
         private void GridData_Loaded(object sender, RoutedEventArgs e)
         {
             GridData.Columns[1].Width =200;
+            GridData.Columns[0].Header = "Select ELements";
+            GridData.Columns[1].Header = "Activity Name";
+            GridData.Columns[2].Header = "Cost Risk Factor";
+            GridData.Columns[3].Header = "Time Risk Factor";
+            GridData.Columns[4].Header = "Proposed Mitigation";
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -64,6 +70,7 @@ namespace Risk_Management
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            test.Clear();
             foreach(Data item in GridData.ItemsSource)
             {
                 if (item.Checked == true)

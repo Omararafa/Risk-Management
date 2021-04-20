@@ -29,7 +29,42 @@ namespace Risk_Management
             int count = 0;
             foreach (var data in ElementsGroups.Keys)
             {
-                Data.Add(new Risk_Management.Data() { Checked = false, ItemName = data, PercentageCost =PercentagesCost[count],PercentageTime=PercentagesTime[count],Mitigation="test"});
+                string mit = "";
+                string cost = PercentagesCost[count];
+                string time = PercentagesTime[count];
+                int costnum = Convert.ToInt32(cost.Remove(cost.IndexOf("%")));
+                int timenum = Convert.ToInt32(time.Remove(time.IndexOf("%")));
+                if (costnum>timenum)
+                {
+                    if (costnum <= Convert.ToDouble(Properties.Settings.Default.Min)*100)
+                    {
+                        mit = "Low";
+                    }
+                    else if (costnum > Convert.ToDouble(Properties.Settings.Default.Min)*100&& costnum <= Convert.ToDouble(Properties.Settings.Default.Max)*100)
+                    {
+                        mit = "Meduim";
+                    }
+                    else
+                    {
+                        mit = "High";
+                    }
+                }
+                else
+                {
+                    if (timenum <= Convert.ToDouble(Properties.Settings.Default.Min)*100)
+                    {
+                        mit = "Low";
+                    }
+                    else if (timenum > Convert.ToDouble(Properties.Settings.Default.Min)*100 && costnum <= Convert.ToDouble(Properties.Settings.Default.Max)*100)
+                    {
+                        mit = "Meduim";
+                    }
+                    else
+                    {
+                        mit = "High";
+                    }
+                }
+                Data.Add(new Risk_Management.Data() { Checked = false, ItemName = data, PercentageCost =PercentagesCost[count],PercentageTime=PercentagesTime[count],Mitigation=mit});
                 count++;
             }
 

@@ -27,6 +27,13 @@ namespace Risk_Management
         public RiskScaleWPF()
         {
             InitializeComponent();
+            if (!(string.IsNullOrEmpty(Properties.Settings.Default.Max)))
+            {
+                Max.Text = Properties.Settings.Default.Max;
+                Min.Text = Properties.Settings.Default.Min;
+                Meduim.Text = Properties.Settings.Default.Meduim;
+            }
+
         }
 
         private void Done_Click(object sender, RoutedEventArgs e)

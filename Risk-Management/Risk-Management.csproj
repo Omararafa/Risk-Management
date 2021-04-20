@@ -101,6 +101,7 @@
     <Compile Include="FINAL.xaml.cs">
       <DependentUpon>FINAL.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Help.cs" />
     <Compile Include="RiskScaleCommand.cs" />
     <Compile Include="ActiveTimeView.cs" />
     <Compile Include="ActiveCostView.cs" />
@@ -152,7 +153,9 @@
     <None Include="Resources\CostView.png" />
     <None Include="Resources\TimeImpact.png" />
     <None Include="Resources\RiskScale.png" />
+    <None Include="Resources\Help.png" />
     <Content Include="Risk-Management.addin" />
+    <None Include="Software Tutorial - Mitigation BIM Risks.pdf" />
     <None Include="Tasks.csv" />
   </ItemGroup>
   <ItemGroup>

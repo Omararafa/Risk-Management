@@ -792,12 +792,16 @@ namespace Risk_Management
                         }
                         foreach (var el in item.Value)
                         {
-                            ogs.SetProjectionLineColor(TimeColor);
-                            ogs.SetProjectionFillColor(TimeColor);
-                            TimeImpactView.SetElementOverrides(el.Id, ogs);
-                            ogs.SetProjectionLineColor(CostColor);
-                            ogs.SetProjectionFillColor(CostColor);
-                            CostImpactView.SetElementOverrides(el.Id, ogs);
+                            if (!(el == null))
+                            {
+                                ogs.SetProjectionLineColor(TimeColor);
+                                ogs.SetProjectionFillColor(TimeColor);
+                                TimeImpactView.SetElementOverrides(el.Id, ogs);
+                                ogs.SetProjectionLineColor(CostColor);
+                                ogs.SetProjectionFillColor(CostColor);
+                                CostImpactView.SetElementOverrides(el.Id, ogs);
+                            }
+
                         }
                         string PercentTextcost = Convert.ToDouble(Math.Round(Cost*100)) + "%";
                         string PercentTexttime = Convert.ToDouble(Math.Round(Time*100)) + "%";
@@ -810,7 +814,7 @@ namespace Risk_Management
                     #region Final
                     FINAL final = new FINAL(MainDictionary,percentageCost,percentageTime,tx,doc,uidoc);
                     final.Height = 610;
-                    final.Width = 700;
+                    final.Width = 720;
                     double screenWidthF = System.Windows.SystemParameters.PrimaryScreenWidth;
                     double screenHeightF = System.Windows.SystemParameters.PrimaryScreenHeight;
                     double windowWidthF = final.Width;
